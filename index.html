@@ -14,50 +14,55 @@
     background: #000000;
     color: #ffffff;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    flex-direction: column;
   }
 
-  .message {
+  .message-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.2rem;
     letter-spacing: 0.05em;
     opacity: 0.9;
-    text-align: center;
-    padding: 1rem;
     transition: opacity 0.3s ease;
   }
 
   .refresh-btn {
-    margin-top: 1.5rem;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.3);
-    color: rgba(255,255,255,0.6);
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
     cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.2s ease;
+    padding: 0;
   }
 
   .refresh-btn:hover {
-    border-color: rgba(255,255,255,0.6);
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.8);
   }
 </style>
 </head>
 <body>
-  <div class="message" id="message"></div>
-  <button class="refresh-btn" onclick="showRandomMessage()">refresh</button>
+  <div class="message-wrapper">
+    <span id="message"></span>
+    <button class="refresh-btn" onclick="showRandomMessage()" aria-label="Refresh message">↻</button>
+  </div>
 
 <script>
   const messages = [
-    "Homepage tasks until next resting time",
-    "Small steps still move you forward.",
-    "Progress beats perfection.",
-    "Do one thing that your future self will thank you for.",
-    "Momentum starts with a single action.",
-    "Stay consistent. That’s the secret.",
-    "Focus now, relax later."
+    "don't be lazy", 
+    "change is needed to move forward",
+    "effort = outcome",
+    "it's actually easy",
+    "specifically what is stopping me and what should I do in the next 10 seconds",
+    "studying hard is part of my personality",
+    "I trust myself. what do I want?",
+    "students that don't beat themselves up do better",
+    "going to keep trying until I succeed",
+    "don't want to ever have to apply for a shitty job and get rejected. I want good jobs to want me"
+    "does the challenge match my skill level",
+    "later is no better than right now",
+    "doing a task well is inversely proportional to doing it often",
+    "the best productivity tech is my brain",
   ];
 
   let lastIndex = -1;
@@ -70,20 +75,20 @@
 
     lastIndex = randomIndex;
 
-    const messageEl = document.getElementById("message");
-    messageEl.style.opacity = 0;
+    const wrapper = document.querySelector(".message-wrapper");
+    wrapper.style.opacity = 0;
 
     setTimeout(() => {
-      messageEl.textContent = messages[randomIndex];
-      messageEl.style.opacity = 0.9;
-    }, 200);
+      document.getElementById("message").textContent = messages[randomIndex];
+      wrapper.style.opacity = 0.9;
+    }, 150);
   }
 
-  // Show one immediately on load
   showRandomMessage();
 </script>
 </body>
 </html>
+
 
 
 
