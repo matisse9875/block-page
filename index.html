@@ -14,23 +14,76 @@
     background: #000000;
     color: #ffffff;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    flex-direction: column;
   }
 
   .message {
     font-size: 1.2rem;
     letter-spacing: 0.05em;
     opacity: 0.9;
+    text-align: center;
+    padding: 1rem;
+    transition: opacity 0.3s ease;
+  }
+
+  .refresh-btn {
+    margin-top: 1.5rem;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.6);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .refresh-btn:hover {
+    border-color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.9);
   }
 </style>
 </head>
 <body>
-  <div class="message">Homepage tasks until next resting time</div>
+  <div class="message" id="message"></div>
+  <button class="refresh-btn" onclick="showRandomMessage()">refresh</button>
+
+<script>
+  const messages = [
+    "Homepage tasks until next resting time",
+    "Small steps still move you forward.",
+    "Progress beats perfection.",
+    "Do one thing that your future self will thank you for.",
+    "Momentum starts with a single action.",
+    "Stay consistent. That’s the secret.",
+    "Focus now, relax later."
+  ];
+
+  let lastIndex = -1;
+
+  function showRandomMessage() {
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * messages.length);
+    } while (randomIndex === lastIndex && messages.length > 1);
+
+    lastIndex = randomIndex;
+
+    const messageEl = document.getElementById("message");
+    messageEl.style.opacity = 0;
+
+    setTimeout(() => {
+      messageEl.textContent = messages[randomIndex];
+      messageEl.style.opacity = 0.9;
+    }, 200);
+  }
+
+  // Show one immediately on load
+  showRandomMessage();
+</script>
 </body>
 </html>
-
-
-
-
 
 
 
