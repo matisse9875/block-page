@@ -1,57 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>hang watch up</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #000000;
-    color: #ffffff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  }
-  .message-wrapper {
-    font-size: 2rem;
-    letter-spacing: 0.05em;
-    opacity: 0.9;
-    max-width: 80vw;
-    text-align: center;
-    line-height: 1.6;
-    padding: 0 2rem;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Text</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 8vw;
+    }
+
+    p {
+      color: #fff;
+      font-family: Georgia, serif;
+      font-size: clamp(1.4rem, 3.5vw, 2.5rem);
+      line-height: 1.6;
+      text-align: center;
+      max-width: 800px;
+    }
+  </style>
 </head>
 <body>
-  <div class="message-wrapper">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -16 115 116" width="230" height="200">
-      <rect x="0" y="-16" width="115" height="116" fill="black"/>
-      
-      <!-- Watch strap top -->
-      <rect x="38" y="6" width="24" height="16" rx="2" fill="none" stroke="white" stroke-width="2.5"/>
-      <!-- Watch strap bottom -->
-      <rect x="38" y="66" width="24" height="16" rx="2" fill="none" stroke="white" stroke-width="2.5"/>
-      <!-- Watch body (square) -->
-      <rect x="28" y="22" width="44" height="44" rx="4" fill="none" stroke="white" stroke-width="2.5"/>
-
-      <!-- YouTube logo in center of watch (smaller) -->
-      <rect x="41" y="38" width="18" height="12" rx="3" fill="none" stroke="white" stroke-width="2"/>
-      <!-- Play triangle (smaller) -->
-      <polygon points="48,42 48,48 54,44" fill="white"/>
-
-      <!-- Arrow moved up ~16px (50% of its vertical length) -->
-      <line x1="88" y1="18" x2="110" y2="-13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="110" y1="-13" x2="112" y2="-2" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-      <line x1="110" y1="-13" x2="99" y2="-11" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-    </svg>
-  </div>
+  <p>Consider. Is this a good use of my time? Then carry on</p>
 </body>
 </html>
-
 
 
 
